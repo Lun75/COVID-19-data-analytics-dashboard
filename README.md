@@ -12,11 +12,11 @@ Key features:
 - Interactive visualisations for exploratory analysis
 - User-controlled dashboard elements (scaling, time windows, refresh)
 
-# Data Sources
+### Data Sources
 UK Health Security Agency (UKHSA) COVID-19 Dashboard including hospital beds occupied by COVID-19 patients and COVID-19 test positivity rate (7-day rolling average)
 Data is accessed via the UKHSA public API and cached locally to ensure dashboard availability during API downtime.
 
-System Architecture
+### System Architecture
 1. API Communication Layer
 A custom APIwrapper class was implemented to manage communication with the UKHSA API.
 Key responsibilities include constructing API requests, handling rate limiting to prevent access bans, managing timestamps, providing a clean interface for future data extensions. The dashboard has mirrors real-world constraints when working with external data providers.
@@ -28,7 +28,7 @@ To ensure robustness, the dashboard has loads local JSON snapshots when the API 
 Raw JSON responses are transformed into structured Pandas DataFrames through dedicated wrangling functions of date parsing and standardisation, dataset merging across multiple sources, using time-series datasets for plotting and filtering and rolling-average calculations
 
 
-Potential Improvements
+### Potential Improvements
 - Automate scheduled data refreshes
 - Add regional or demographic breakdowns
 - Deploy as a lightweight web application
